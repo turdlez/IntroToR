@@ -35,9 +35,9 @@ barplot(spider$table(tot_webs)) # by virtue of the way table() produces its resu
 hist(spider$tot_webs) # a more general way of doing a histogram (also deals with continuous data).
 # Use "prob=TRUE" to plot relative frequencies (so the area under the graph is 1).
 # The "breaks" option can be used for manual control of the number of bins.
-boxplot(tot_webs) # Box-and-whisker plot
-boxplot(tot_webs~island) #boxplot separated by group
-plot(birddens, tot_webs) #scatterplot, but bird_dens varies by island and only 4 islands, so it looks strange
+boxplot(spider$tot_webs) # Box-and-whisker plot
+boxplot(spider$tot_webs~island) #boxplot separated by group
+plot(spider$birddens, tot_webs) #scatterplot, but bird_dens varies by island and only 4 islands, so it looks strange
 
 ######graphing with ggplot2########
 #http://blog.echen.me/2012/01/17/quick-introduction-to-ggplot2/
@@ -50,7 +50,7 @@ ggplot(spider, aes(x=island, y=tot_webs))+
       ylab("Number of webs")+ 
       ggtitle("Spider webs and Island")
 
-# `Orange` is another built-in data frame that describes the growth of orange trees.
+# `Orange` is a built-in data frame that describes the growth of orange trees.
 str(Orange)
 summary(Orange)
 
